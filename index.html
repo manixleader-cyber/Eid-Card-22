@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Eid Mubarak Jia ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a1a2e, #0f3460);
+  color: white;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+#text {
+  font-size: 26px;
+  min-height: 120px;
+  max-width: 600px;
+}
+
+.options {
+  margin-top: 20px;
+}
+
+.option {
+  display: inline-block;
+  margin: 10px;
+  padding: 12px 20px;
+  background: rgba(255, 77, 109, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.option:hover {
+  transform: scale(1.1);
+}
+
+#nextBtn {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 30px;
+  background: gold;
+  cursor: pointer;
+}
+
+img {
+  margin-top: 20px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px pink;
+}
+
+.heart {
+  position: fixed;
+  color: pink;
+  animation: float 4s linear infinite;
+}
+
+@keyframes float {
+  from {transform: translateY(100vh);}
+  to {transform: translateY(-10vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div id="app">
+  <div id="text"></div>
+  <img id="image" style="display:none;">
+  <div class="options" id="options"></div>
+  <button id="nextBtn" onclick="nextSlide()">Next ❤️</button>
+</div>
+
+<!-- Romantic Music -->
+<audio autoplay loop>
+  <source src="https://cdn.pixabay.com/download/audio/2023/03/14/audio_3f6c0b0d5b.mp3?filename=romantic-background-141997.mp3">
+</audio>
+
+<script>
+let i = 0;
+
+const slides = [
+
+"Eid Mubarak Jia ❤️",
+"Assalam o Alaikum meri jaan ❤️",
+"Aaj Eid ka din hai...",
+
+{
+q:"Main kya soch raha hoon?",
+o:["Biryani 🍗","Eidi 💰","Tum ❤️"],
+c:2
+},
+
+"Tum hi meri sab se pyari soch ho ❤️",
+
+{
+img:"https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e"
+},
+
+"Meri Eid tum se hi complete hoti hai...",
+
+{
+q:"Meri Eid kab complete hoti hai?",
+o:["Jab sota hoon 😴","Jab net jaye 📵","Jab tum ho ❤️"],
+c:2
+},
+
+"Tum kam baat karti ho...",
+"Lekin phir bhi bohat pyari ho ❤️",
+
+{
+q:"Tum special kyun ho?",
+o:["Pata nahi 🤷","Aadat 😄","Dil se ❤️"],
+c:2
+},
+
+"Main janta hoon tum shy ho...",
+"Par tumhari simplicity hi best hai ❤️",
+
+{
+q:"Kya tum meri life ka hissa rehna chahti ho?",
+o:["Nahi 😜","Sochungi 🤔","Haan ❤️"],
+c:2
+},
+
+"Ek choti si baat kahun 😊",
+"Tum har style mein khoobsurat lagti ho 😍",
+
+{
+q:"Kya tum kabhi choti si nthli try karogi? 😊",
+o:["Bilkul nahi 😜","Shayad 😄","Tumhare liye ❤️"],
+c:2
+},
+
+"Lekin jo tumhein pasand ho wahi best hai ❤️",
+
+{
+img:"https://images.unsplash.com/photo-1517841905240-472988babdf9"
+},
+
+"Main sirf tumhein khush dekhna chahta hoon...",
+
+{
+q:"Kya tum meri khushi ho?",
+o:["Nahi 😄","Thori 😅","Haan ❤️"],
+c:2
+},
+
+"Main har Eid tumhare saath chahta hoon...",
+"Hamesha ke liye ❤️",
+
+{
+q:"Kya tum bhi ye chahti ho?",
+o:["Nahi 😜","Dekhenge 😄","Haan ❤️"],
+c:2
+},
+
+"Tum meri sab se pyari Eidi ho 🎁",
+
+{
+q:"Main kya kehna chahta hoon?",
+o:["Bye 😜","Good Night 😄","I Love You ❤️"],
+c:2
+},
+
+{
+final:true,
+text:`Eid Mubarak Jia ❤️
+
+Aaj ke is khoobsurat din par main bas itna kehna chahta hoon ke tum meri zindagi ki sab se pyari aur sab se khoobsurat feeling ho.
+
+Tumhari muskurahat meri duniya ko roshan karti hai, aur tumhari har choti si baat mere dil ko sukoon deti hai.
+
+Mujhe pata hai ke tum zyada express nahi karti, lekin main tumhein samajhta hoon… aur shayad isi liye tum mujhe aur bhi zyada pasand ho.
+
+Main chahta hoon ke har Eid, har khushi, har lamha hum dono saath guzarein.
+
+Main hamesha tumhare saath rehna chahta hoon, tumhein khush dekhna chahta hoon, aur tumhari har muskurahat ka reason banna chahta hoon.
+
+Agar kabhi main zyada bolun ya tang karun, to samajh lena ke wo sirf is liye hai kyun ke main tum se bohat zyada pyaar karta hoon ❤️
+
+Tum meri dua ho… meri khushi ho… meri Eid ho…
+
+Eid Mubarak Jia ❤️`
+}
+
+];
+
+function typeText(text, el){
+  el.innerHTML="";
+  let j=0;
+  let interval=setInterval(()=>{
+    el.innerHTML += text[j];
+    j++;
+    if(j>=text.length) clearInterval(interval);
+  },40);
+}
+
+function showSlide(){
+  let slide = slides[i];
+  let textDiv = document.getElementById("text");
+  let optDiv = document.getElementById("options");
+  let img = document.getElementById("image");
+
+  optDiv.innerHTML="";
+  img.style.display="none";
+
+  if(typeof slide === "string"){
+    typeText(slide, textDiv);
+    nextBtn.style.display="block";
+  }
+
+  else if(slide.q){
+    typeText(slide.q, textDiv);
+    nextBtn.style.display="none";
+
+    slide.o.forEach((op, index)=>{
+      let btn = document.createElement("div");
+      btn.className="option";
+      btn.innerText=op;
+
+      if(index !== slide.c){
+        btn.onmouseover=()=>{
+          btn.style.position="absolute";
+          btn.style.top=Math.random()*80+"%";
+          btn.style.left=Math.random()*80+"%";
+        }
+      } else {
+        btn.onclick=()=>{nextSlide();}
+      }
+
+      optDiv.appendChild(btn);
+    });
+  }
+
+  else if(slide.img){
+    textDiv.innerHTML="❤️";
+    img.src = slide.img;
+    img.style.display="block";
+    nextBtn.style.display="block";
+  }
+
+  else if(slide.final){
+    typeText(slide.text, textDiv);
+    nextBtn.style.display="none";
+    createHearts();
+  }
+}
+
+function nextSlide(){
+  i++;
+  if(i<slides.length){
+    showSlide();
+  }
+}
+
+function createHearts(){
+  setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"%";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),4000);
+  },300);
+}
+
+showSlide();
+</script>
+
+</body>
+</html>
